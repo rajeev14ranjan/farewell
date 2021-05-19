@@ -1,0 +1,32 @@
+.post {
+  margin: 10px;
+  padding: 10px 15px;
+  background-color: #ffffffd9;
+  border-radius: 5px;
+  box-shadow: 3px 3px 7px gray;
+  position: relative;
+}
+
+.post-footer {
+  border-top: 1px solid lightgray;
+  margin: 15px 10px;
+  padding: 5px 0 0;
+}
+
+.post-sender {
+  color: blue;
+  font-size: 1.1em;
+}
+
+.post-date {
+  float: right;
+  color: gray;
+  font-size: 0.7em;
+  padding-top: 2px;
+}
+
+.post-message {
+  margin: 10px;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1em;
+}

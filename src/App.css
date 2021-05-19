@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+.App-header {
+  padding: 4px 30px;
+  background-color: black;
+  color: aliceblue;
+  font-size: 1.3em;
+  margin-bottom: 15px;
+}
+
+.farewell-posts {
+  margin: 10px auto 30px;
+  width: 90%;
+}
