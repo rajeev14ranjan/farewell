@@ -1,27 +1,53 @@
+import React, { useState } from 'react';
 import './Form.css';
 
 
-function Form({ }) {
-    //TODO: Connect to API
-    /*      const postData = {
-                action: 'savepost',
-                message: 'Hi, This is my farewell message...',
-                sender: 'Dummy sender',
-            }
-            const response = await fetch('./api/greet.php', {
-                        method: 'post',
-                        body: JSON.stringify(postData)
+function Form({ callback }) {
+    const [field, setField] = useState({ message: '', sender: '' });
+
+    const isEmpty = txt => !txt || !txt.trim()
+
+    const handleMessage = (event) => {
+        setField({ ...field, message: event.target.value });
+    }
+
+    const handleSender = (event) => {
+        setField({ ...field, sender: event.target.value });
+    }
+
+    const savePost = async () => {
+        if (isEmpty(field.message) || isEmpty(field.sender)) {
+            return;
+        }
+
+        const postData = {
+            action: 'savepost',
+            message: field.message,
+            sender: field.sender,
+        }
+        const response = await fetch('./api/post.php', {
+            method: 'post',
+            body: JSON.stringify(postData)
         });
-    */
+
+        const data = await response.json()
+        if (data.status) {
+            setField({ message: '', sender: '' })
+            callback({
+                message: field.message,
+                sender: field.sender,
+            })
+        }
+    }
 
     return (
         <div className="form">
-            <form class="form-inline">
-                <label for="text">Message:</label>
-                <input type="text" maxLength="5000" placeholder="Enter your message" />
-                <label for="pwd">Name:</label>
-                <input type="text" placeholder="Enter name" />
-                <button type="button">Post</button>
+            <form className="form-inline">
+                <label htmlFor="text">Message:</label>
+                <textarea type="text" rows="5" maxLength="5000" value={field.message} onChange={handleMessage} placeholder="Enter your message" /> <br />
+                <label htmlFor="pwd">Name:</label>
+                <input type="text" maxLength="30" value={field.sender} onChange={handleSender} placeholder="Enter name" /><br />
+                <button type="button" onClick={savePost}>Post</button>
             </form>
         </div>
     );
