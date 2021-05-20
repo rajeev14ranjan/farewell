@@ -3,13 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@heroicons/react": "^1.0.1",
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "classnames": "^2.3.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "workbox-background-sync": "^5.1.3",
+    "workbox-broadcast-update": "^5.1.3",
+    "workbox-cacheable-response": "^5.1.3",
+    "workbox-core": "^5.1.3",
+    "workbox-expiration": "^5.1.3",
+    "workbox-google-analytics": "^5.1.3",
+    "workbox-navigation-preload": "^5.1.3",
+    "workbox-precaching": "^5.1.3",
+    "workbox-range-requests": "^5.1.3",
+    "workbox-routing": "^5.1.3",
+    "workbox-strategies": "^5.1.3",
+    "workbox-streams": "^5.1.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -20,9 +34,49 @@
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+      "eslint:recommended",
+      "plugin:react-hooks/recommended",
+      "plugin:react/recommended",
+      "plugin:jest/recommended"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/__tests__/**/*.[jt]s?(x)",
+          "**/?(*.)+(spec|test).[jt]s?(x)"
+        ],
+        "extends": [
+          "plugin:testing-library/react"
+        ]
+      }
+    ],
+    "rules": {
+      "react/jsx-uses-react": "off",
+      "react/react-in-jsx-scope": "off",
+      "react/prop-types": "warn",
+      "react/jsx-key": "error"
+    },
+    "env": {
+      "browser": true,
+      "node": true,
+      "jest/globals": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "module",
+      "allowImportExportEverywhere": true,
+      "globals": {
+        "setInterval": "readonly",
+        "clearInterval": "readonly",
+        "document": "readonly"
+      }
+    },
+    "settings": {
+      "react": {
+        "pragma": "React",
+        "version": "detect"
+      }
+    }
   },
   "browserslist": {
     "production": [
@@ -35,5 +89,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^7.25.0",
+    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-jest-dom": "^3.8.1",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-testing-library": "^4.2.0",
+    "prettier": "^2.2.1",
+    "prop-types": "^15.7.2"
   }
 }
