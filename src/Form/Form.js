@@ -21,7 +21,7 @@ function Form({ }) {
                 <input type="text" maxLength="5000" placeholder="Enter your message" />
                 <label for="pwd">Name:</label>
                 <input type="text" placeholder="Enter name" />
-                <button type="submit">Post</button>
+                <button type="button">Post</button>
             </form>
         </div>
     );
