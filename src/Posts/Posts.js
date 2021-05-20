@@ -1,10 +1,10 @@
 import './Post.css';
 
 
-function Post({ sender, date, message, likes }) {
-    let getStr = (d) => {
+function Post({ sender, date, message }) {
+    let getStr = (date) => {
+        let d = new Date(`${date} GMT+0`);
         let month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-        let hours = d.getHours();
         return `${d.getDate()} ${month[d.getMonth() + 1]}, ${pad(d.getHours())}:${pad(d.getMinutes())}`;
     }
 

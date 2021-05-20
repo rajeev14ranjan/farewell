@@ -2,17 +2,27 @@ import './Form.css';
 
 
 function Form({ }) {
+    //TODO: Connect to API
+    /*      const postData = {
+                action: 'savepost',
+                message: 'Hi, This is my farewell message...',
+                sender: 'Dummy sender',
+            }
+            const response = await fetch('./api/greet.php', {
+                        method: 'post',
+                        body: JSON.stringify(postData)
+        });
+    */
+
     return (
         <div className="form">
-            <div className="form-message">
-                <input type="text"></input>
-            </div>
-            <footer className="form-footer">
-                <span className="form-like">
-                    <span className="form-name"> </span>
-                    <sapn className="form-action"></sapn>
-                </span>
-            </footer>
+            <form class="form-inline">
+                <label for="text">Message:</label>
+                <input type="text" maxLength="5000" placeholder="Enter your message" />
+                <label for="pwd">Name:</label>
+                <input type="text" placeholder="Enter name" />
+                <button type="submit">Post</button>
+            </form>
         </div>
     );
 }
