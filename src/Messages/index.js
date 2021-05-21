@@ -30,14 +30,19 @@ function Messages() {
   }, []);
 
   const callback = ({ message, sender }) => {
-    let newData = {
-      id: data.length,
-      date: new Date(),
-      message,
-      sender,
-    };
+    let newData = [
+      ...data,
+      {
+        id: `${data.length}`,
+        date: new Date(),
+        message,
+        sender,
+      }
+    ];
 
-    setData([...data, newData]);
+    setData(newData);
+    setShowAddMessageForm(false);
+    setCurrentPost(newData.length - 1);
   };
 
   return (
