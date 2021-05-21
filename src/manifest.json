@@ -1,0 +1,17 @@
+{
+    "name": "Farewell",
+    "short_name": "Farewell",
+    "theme_color": "#ffffff",
+    "background_color": "#000000",
+    "display": "fullscreen",
+    "orientation": "portrait",
+    "scope": "/",
+    "start_url": "/",
+    "icons": [
+        {
+            "src": "/static/media/priyank.png",
+            "type": "image/png",
+            "sizes": "195x192"
+        }
+    ]
+}

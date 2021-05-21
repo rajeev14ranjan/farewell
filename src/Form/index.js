@@ -44,7 +44,7 @@ function Form({ callback }) {
       <textarea
         type="text"
         rows="5"
-        maxLength="5000"
+        maxLength="300"
         value={field.message}
         onChange={handleMessage}
         placeholder="Enter your message"
