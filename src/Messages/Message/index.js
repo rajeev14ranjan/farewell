@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 function Post({ sender, date, message, currentPost, index }) {
   let getStr = (date) => {
-    let d = new Date(`${date} GMT+0`);
+    let d = typeof date == "string" ? new Date(`${date.replaceAll("-", "/")} GMT+0`) : date;
     let month = [
       "Jan",
       "Feb",
