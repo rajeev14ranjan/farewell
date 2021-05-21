@@ -1,18 +1,13 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: black;
+  background-color: #fff;
 }
-
-.App-header {
-  padding: 4px 30px;
-  background-color: black;
-  color: aliceblue;
-  font-size: 1.3em;
-  margin-bottom: 15px;
-}
-
-.farewell-posts {
-  margin: 10px auto 30px;
-  width: 90%;
+.app {
+  background-image: url("./farewell.jpeg");
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }

@@ -1,0 +1,41 @@
+.message {
+  width: 100vw;
+  height: 100vh;
+  transition: margin-top 1s ease-in;
+  display: grid;
+  grid-template-rows: 60% 40%;
+  font-size: x-large;
+  justify-items: center;
+}
+.message.current {
+  top: 0;
+}
+
+.post-footer {
+  background-color: rgb(255 255 255 / 50%);
+  margin: 15px 0;
+  padding: 20px;
+  font-size: large;
+  width: 70vw;
+  height: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  max-width: calc(55vh);
+  align-items: center;
+}
+
+.post-sender {
+  justify-self: left;
+}
+
+.post-date {
+  justify-self: right;
+}
+
+.post-message {
+  align-self: end;
+  width: 70vw;
+  padding: 20px;
+  background-color: rgb(255 255 255 / 50%);
+  max-width: calc(55vh);
+}

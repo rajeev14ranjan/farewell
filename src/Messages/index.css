@@ -1,0 +1,38 @@
+.messages {
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.controls {
+  position: fixed;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  width: 100vw;
+  max-width: calc(55vh);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.controls .next-prev {
+  display: grid;
+  grid-template-rows: repeat(2, 50%);
+}
+.controls .icon {
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+  padding: 0 10px 10px 20px;
+}
+
+.controls .icon[disabled] {
+  color: #c0c0c0;
+}
+
+.controls .add {
+  align-self: center;
+  justify-self: right;
+  padding: 20px;
+}
