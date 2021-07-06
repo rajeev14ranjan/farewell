@@ -43,7 +43,7 @@ function generate_id(){
 function handle_post_request(){
     $data = json_decode(file_get_contents('php://input'), true);
 
-    // TODO: Temporary disabling aut key veryfication
+    // TODO: Temporary disabling
     // $key = $data["key"];
     // if(!validate_Key($key)){
     //     header('Content-Type: application/json');
@@ -68,7 +68,6 @@ function handle_post_request(){
         break; 
         }
     }
-}
         
     
 
