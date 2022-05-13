@@ -1,6 +1,6 @@
 {
-    "name": "Farewell",
-    "short_name": "Farewell",
+    "name": "JB Farewell",
+    "short_name": "JB Farewell",
     "theme_color": "#ffffff",
     "background_color": "#000000",
     "display": "fullscreen",
@@ -9,9 +9,16 @@
     "start_url": "/",
     "icons": [
         {
-            "src": "/static/media/priyank.png",
+            "src": "/logo192.png",
             "type": "image/png",
-            "sizes": "195x192"
+            "sizes": "192x192",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/logo512.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any maskable"
         }
     ]
 }

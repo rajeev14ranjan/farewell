@@ -7,6 +7,7 @@ import {
   PlusCircleIcon,
   XCircleIcon,
 } from "@heroicons/react/solid";
+import { getLastPostIndex, setLastPostIndex } from '../Service/localStorage';
 // import dummyData from "./dummyData.js";
 import "./index.css";
 
@@ -15,7 +16,7 @@ function Messages() {
   const [showAddMessageForm, setShowAddMessageForm] = useState(false);
 
   const [data, setData] = useState([]);
-  const [currentPost, setCurrentPost] = useState(0);
+  const [currentPost, setCurrentPost] = useState(getLastPostIndex());
 
   useEffect(() => {
     const fetchData = async () => {
@@ -43,6 +44,7 @@ function Messages() {
     setData(newData);
     setShowAddMessageForm(false);
     setCurrentPost(newData.length - 1);
+    setLastPostIndex(newData.length - 1);
   };
 
   return (
@@ -68,7 +70,10 @@ function Messages() {
             disabled={currentPost < 1}
             onClick={() => {
               if (currentPost > 0) {
-                setCurrentPost((post) => post - 1);
+                setCurrentPost((post) => {
+                  setLastPostIndex(post - 1);
+                  return post - 1
+                });
               }
             }}
           />
@@ -77,7 +82,10 @@ function Messages() {
             disabled={currentPost >= data.length - 1}
             onClick={() => {
               if (currentPost < data.length - 1) {
-                setCurrentPost((post) => post + 1);
+                setCurrentPost((post) => {
+                  setLastPostIndex(post + 1);
+                  return post + 1
+                });
               }
             }}
           />
