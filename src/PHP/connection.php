@@ -1,10 +1,10 @@
 <?php
 Class dbObj{
  /* Database connection start */
- var $servername = "*******";
- var $username = "************"
- var $password = "*************";
- var $dbname = "*****************";
+ var $servername = "localhost";
+ var $username = "id17200884_admin";
+ var $password = "ywz1nL9}R!8pifEH";
+ var $dbname = "id17200884_farewellposts";
  var $conn;
  
  function getConnstring() {

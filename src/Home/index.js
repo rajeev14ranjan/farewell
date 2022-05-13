@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div className="home">
       <label>
-        Priyank, this is what your colleagues have to say about you ...
+        Niranjan, this is what your colleagues have to say about you ...
       </label>
       <ChevronDoubleDownIcon
         className="icon"
